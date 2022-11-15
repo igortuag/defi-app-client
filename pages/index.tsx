@@ -8,7 +8,11 @@ const styles = {
 };
 
 const Home: NextPage = () => {
-  return <div className={styles.wrapper}></div>;
+  return (
+    <div className={styles.wrapper}>
+      <h2>Hello World</h2>
+    </div>
+  );
 };
 
 export default Home;
