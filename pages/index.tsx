@@ -10,7 +10,9 @@ const styles = {
 const Home: NextPage = () => {
   return (
     <div className={styles.wrapper}>
-      <h2>Hello World</h2>
+      <header>header</header>
+      <main>main</main>
+      <footer>footer</footer>
     </div>
   );
 };
