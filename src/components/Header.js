@@ -16,6 +16,13 @@ const Header = () => {
       <div className={style.headerLogo}>
         <Image src={uniswapLogo} alt="Uniswap Logo" width={40} height={40} />
       </div>
+      <nav className="style.nav">
+        <ul className={style.navList}>
+          <li className={style.navItem} onClick={() => setSelectedNav("swap")}>
+            Swap
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };
