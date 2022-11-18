@@ -9,6 +9,8 @@ import Image from "next/image";
 const style = {}
 
 const Header = () => {
+  const [selectedNav, setSelectedNav] = useState("swap");
+
   return <header>Header</header>;
 };
 
