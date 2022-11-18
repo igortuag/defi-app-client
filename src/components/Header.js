@@ -6,6 +6,8 @@ import ethlogo from "../assets/ethlogo.png";
 import uniswapLogo from "../assets/uniswapLogo.png";
 import Image from "next/image";
 
+const style = {}
+
 const Header = () => {
   return <header>Header</header>;
 };
