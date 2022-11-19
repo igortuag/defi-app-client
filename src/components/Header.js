@@ -18,9 +18,37 @@ const Header = () => {
       </div>
       <nav className="style.nav">
         <ul className={style.navList}>
-          <li className={style.navItem} onClick={() => setSelectedNav("swap")}>
+          <li
+            className={`${style.navItem}
+            ${selectedNav === "swap" ? style.selected : ""}
+          `}
+            onClick={() => setSelectedNav("swap")}
+          >
             Swap
           </li>
+          <li
+            className={`${style.navItem}
+            ${selectedNav === "pool" ? style.selected : ""} 
+          `}
+            onClick={() => setSelectedNav("pool")}
+          >
+            Pool
+          </li>
+          <li
+            className={`${style.navItem}
+            ${selectedNav === "vote" ? style.selected : ""}
+          `}
+            onClick={() => setSelectedNav("vote")}
+          >
+            Vote
+          </li>
+          <a
+            href="https://info.uniswap.ort/#/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li className={style.navItem}>Charts</li>
+          </a>
         </ul>
       </nav>
     </header>
