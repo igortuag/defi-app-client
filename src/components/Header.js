@@ -34,6 +34,14 @@ const Header = () => {
           >
             Pool
           </li>
+          <li
+            className={`${style.navItem}
+            ${selectedNav === "vote" ? style.selected : ""}
+          `}
+            onClick={() => setSelectedNav("vote")}
+          >
+            Vote
+          </li>
         </ul>
       </nav>
     </header>
