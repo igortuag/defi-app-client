@@ -18,7 +18,12 @@ const Header = () => {
       </div>
       <nav className="style.nav">
         <ul className={style.navList}>
-          <li className={style.navItem} onClick={() => setSelectedNav("swap")}>
+          <li
+            className={`${style.navItem}
+            ${selectedNav === "swap" ? style.selected : ""}
+          `}
+            onClick={() => setSelectedNav("swap")}
+          >
             Swap
           </li>
         </ul>
