@@ -26,6 +26,14 @@ const Header = () => {
           >
             Swap
           </li>
+          <li
+            className={`${style.navItem}
+            ${selectedNav === "pool" ? style.selected : ""} 
+          `}
+            onClick={() => setSelectedNav("pool")}
+          >
+            Pool
+          </li>
         </ul>
       </nav>
     </header>
