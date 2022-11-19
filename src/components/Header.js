@@ -42,6 +42,13 @@ const Header = () => {
           >
             Vote
           </li>
+          <a
+            href="https://info.uniswap.ort/#/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li className={style.navItem}>Charts</li>
+          </a>
         </ul>
       </nav>
     </header>
