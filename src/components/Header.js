@@ -47,10 +47,19 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <li className={style.navItem}>Charts
+            <li className={style.navItem}>
+              Charts
               <FiArrowUpRight />
             </li>
           </a>
+        </ul>
+        <ul className={style.buttonsContainer}>
+          <li className={`${style.button} ${style.buttonPadding}`}>
+            <div className={style.buttonsContainer}>
+              <Image src={ethlogo} alt="Ethereum Logo" width={20} height={20} />
+            </div>
+            <span>0.00 ETH</span>
+          </li>
         </ul>
       </nav>
     </header>
