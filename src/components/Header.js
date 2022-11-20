@@ -47,7 +47,9 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <li className={style.navItem}>Charts</li>
+            <li className={style.navItem}>Charts
+              <FiArrowUpRight />
+            </li>
           </a>
         </ul>
       </nav>
