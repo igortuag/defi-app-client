@@ -59,6 +59,21 @@ const Header = () => {
               <Image src={ethlogo} alt="Ethereum Logo" width={20} height={20} />
             </div>
             <span>Ethereum</span>
+            <div className={style.buttonsContainer}>
+              <AiOutlineDown />
+            </div>
+          </li>
+
+          <li
+            className={`${style.button} ${style.buttonPadding}`}
+            onClick={() => connectWallet()}
+          >
+            <span>Connect Wallet</span>
+            <div className={`${style.button} ${style.buttonPadding}`}>
+              <div className={`${style.buttonIconContainer} mx-2`}>
+                <HiOutlineDotsVertical />
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
