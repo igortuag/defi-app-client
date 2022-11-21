@@ -6,7 +6,9 @@ import ethlogo from "../assets/ethlogo.png";
 import uniswapLogo from "../assets/uniswapLogo.png";
 import Image from "next/image";
 
-const style = {};
+const style = {
+  wrapper: "p-4 w-screen flex justify-between items-center",
+};
 
 const Header = () => {
   const [selectedNav, setSelectedNav] = useState("swap");
@@ -58,7 +60,22 @@ const Header = () => {
             <div className={style.buttonsContainer}>
               <Image src={ethlogo} alt="Ethereum Logo" width={20} height={20} />
             </div>
-            <span>0.00 ETH</span>
+            <span>Ethereum</span>
+            <div className={style.buttonsContainer}>
+              <AiOutlineDown />
+            </div>
+          </li>
+
+          <li
+            className={`${style.button} ${style.buttonPadding}`}
+            onClick={() => connectWallet()}
+          >
+            <span>Connect Wallet</span>
+            <div className={`${style.button} ${style.buttonPadding}`}>
+              <div className={`${style.buttonIconContainer} mx-2`}>
+                <HiOutlineDotsVertical />
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
