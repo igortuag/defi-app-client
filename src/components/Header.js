@@ -6,7 +6,9 @@ import ethlogo from "../assets/ethlogo.png";
 import uniswapLogo from "../assets/uniswapLogo.png";
 import Image from "next/image";
 
-const style = {};
+const style = {
+  wrapper: "p-4 w-screen flex justify-between items-center",
+};
 
 const Header = () => {
   const [selectedNav, setSelectedNav] = useState("swap");
