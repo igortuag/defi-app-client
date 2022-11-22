@@ -11,6 +11,7 @@ const style = {
   headerLogo: "flex w-1/4 items-center justify-start",
   nav: "flex-1 flex items-center justify-center",
   navItemsContainer: "flex bg-[#191b1f] rounded-3xl",
+  navItem: 'px-4 py-2 flex items-center text-lg font-semibold text-[0.9rem] cursor-pointer rounded-3xl',
 };
 
 const Header = () => {
