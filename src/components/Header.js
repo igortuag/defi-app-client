@@ -10,6 +10,7 @@ const style = {
   wrapper: "p-4 w-screen flex justify-between items-center",
   headerLogo: "flex w-1/4 items-center justify-start",
   nav: "flex-1 flex items-center justify-center",
+  navItemsContainer: "flex bg-[#191b1f] rounded-3xl",
 };
 
 const Header = () => {
