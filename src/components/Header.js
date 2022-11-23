@@ -16,6 +16,7 @@ const style = {
   activeNavItem: "bg-[#20242A]",
   buttonsContainer: "flex w-1/4 justify-end items-center",
   button: "flex items-center bg-[#191b1f] rounded-2xl mx-2 text-[0.9rem] font-semibold cursor pointer",
+  buttonPadding: "p-2",
 };
 
 const Header = () => {
