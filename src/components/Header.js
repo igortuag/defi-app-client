@@ -18,6 +18,7 @@ const style = {
   button: "flex items-center bg-[#191b1f] rounded-2xl mx-2 text-[0.9rem] font-semibold cursor pointer",
   buttonPadding: "p-2",
   buttonTextContainer: "h-8 flex items-center",
+  buttonIconContainer: "h-8 w-8 flex items-center justify-center",
 };
 
 const Header = () => {
