@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import Main from "../components/Main";
 
 const styles = {
   wrapper:
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <div className={styles.wrapper}>
       <Header />
-      <main>main</main>
+      <Main />
       <footer>footer</footer>
     </div>
   );
