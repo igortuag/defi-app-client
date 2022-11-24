@@ -1,13 +1,15 @@
 import React from "react";
-import Image from 'next/Image'
+import Image from "next/Image";
 import { RiSettings3Fill } from "react-icons/ri";
 import { AiOutlineDown } from "react-icons/ai";
 import ethLogo from "../assets/eth.png";
 
-const styles = {}
+const styles = {
+  wrapper: "w-screen flex items-center justify-center flex-col mt-14",
+};
 
 function Main() {
-  return <main>Main</main>;
+  return <main className={styles.wrapper}>Main</main>;
 }
 
 export default Main;
