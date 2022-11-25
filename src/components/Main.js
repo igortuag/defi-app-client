@@ -14,7 +14,14 @@ function Main() {
   return (
     <main className={styles.wrapper}>
       <form className={styles.content}>
-        <header className={styles.formHeader}></header>
+        <header className={styles.formHeader}>
+          <div>
+            Swap
+          </div>
+          <div>
+            <RiSettings3Fill />
+          </div>
+        </header>
       </form>
     </main>
   );
