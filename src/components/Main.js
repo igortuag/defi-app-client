@@ -7,7 +7,8 @@ import ethLogo from "../assets/eth.png";
 const styles = {
   wrapper: "w-screen flex items-center justify-center flex-col mt-14",
   content: "bg-[#181B1F] w-[90%] h-[40rem] rounded-2xl p-4",
-  formHeader: "px-2 flex items-center justify-between font-semibold",
+  formHeader: "px-2 flex items-center justify-between font-semibold text-xl",
+  transferPropContainer: "bbg-[#20242A] my-3 text-3xl border border-[#41444F] [flex  justify-between",
 };
 
 function Main() {
@@ -22,6 +23,9 @@ function Main() {
             <RiSettings3Fill />
           </div>
         </header>
+        <div className={styles.transferPropContainer}>
+
+        </div>
       </form>
     </main>
   );
