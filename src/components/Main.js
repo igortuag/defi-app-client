@@ -6,7 +6,7 @@ import ethLogo from "../assets/eth.png";
 
 const styles = {
   wrapper: "w-screen flex items-center justify-center flex-col mt-14",
-  content: "",
+  content: "bg-[#181B1F] w-[90%] h-[40rem] rounded-2xl p-4",
 };
 
 function Main() {
