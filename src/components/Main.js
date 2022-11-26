@@ -24,7 +24,12 @@ function Main() {
           </div>
         </header>
         <div className={styles.transferPropContainer}>
-
+          <input type="text"
+            className={styles.transferPropInput}
+            placeholder="0.0"
+            pattern="[0-9]*[.,]?[0-9]*$"
+            onChange={(e) => handleInputChange(e, "amount")}
+          />
         </div>
       </form>
     </main>
