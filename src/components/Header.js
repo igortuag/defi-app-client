@@ -71,7 +71,7 @@ const Header = () => {
         </ul>
         <ul className={style.buttonsContainer}>
           <li className={`${style.button} ${style.buttonPadding}`}>
-            <div className={style.buttonsContainer}>
+            <div className={style.buttonIconContainer}>
               <Image src={ethlogo} alt="Ethereum Logo" width={20} height={20} />
             </div>
             <span>Ethereum</span>
