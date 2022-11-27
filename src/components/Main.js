@@ -9,7 +9,8 @@ const styles = {
   content: "bg-[#181B1F] w-[90%] h-[40rem] rounded-2xl p-4",
   formHeader: "px-2 flex items-center justify-between font-semibold text-xl",
   transferPropContainer: "bg-[#20242A] my-3 text-3xl border border-[#41444F] [flex  justify-between",
-  currencySelector: "flex w-1/4"
+  currencySelector: "flex w-1/4",
+  transferPropInput: "w-full bg-transparent text-white text-2xl placeholder:text-[#B2B9D2] outline-none mb-6 flex w-1/4",
 };
 
 function Main() {
