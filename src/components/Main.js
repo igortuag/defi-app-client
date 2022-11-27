@@ -8,7 +8,9 @@ const styles = {
   wrapper: "w-screen flex items-center justify-center flex-col mt-14",
   content: "bg-[#181B1F] w-[90%] h-[40rem] rounded-2xl p-4",
   formHeader: "px-2 flex items-center justify-between font-semibold text-xl",
-  transferPropContainer: "bbg-[#20242A] my-3 text-3xl border border-[#41444F] [flex  justify-between",
+  transferPropContainer: "bg-[#20242A] my-3 text-3xl border border-[#41444F] [flex  justify-between",
+  currencySelector: "flex w-1/4",
+  transferPropInput: "w-full bg-transparent text-white text-2xl placeholder:text-[#B2B9D2] outline-none mb-6 flex w-1/4",
 };
 
 function Main() {
@@ -24,7 +26,25 @@ function Main() {
           </div>
         </header>
         <div className={styles.transferPropContainer}>
-
+          <input type="text"
+            className={styles.transferPropInput}
+            placeholder="0.0"
+            pattern="[0-9]*[.,]?[0-9]*$"
+            onChange={(e) => handleInputChange(e, "amount")}
+          />
+          <div className={style.currencySelector}>
+            <div className={style.currencySelectorContent}>
+              <div className={style.currencySelectorIcon}>
+                <Image src={ethLogo} alt="ETH" width={20} height={20} />
+              </div>
+              <div className={style.currencySelectorTicker}>
+                ETH
+              </div>
+              <div className={style.currencySelectorArrow}>
+                <AiOutlineDown />
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </main>
