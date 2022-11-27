@@ -37,7 +37,12 @@ function Main() {
               <div className={style.currencySelectorIcon}>
                 <Image src={ethLogo} alt="ETH" width={20} height={20} />
               </div>
-
+              <div className={style.currencySelectorTicker}>
+                ETH
+              </div>
+              <div className={style.currencySelectorArrow}>
+                <AiOutlineDown />
+              </div>
             </div>
           </div>
         </div>
