@@ -11,6 +11,7 @@ const styles = {
   transferPropContainer: "bg-[#20242A] my-3 text-3xl border border-[#41444F] [flex  justify-between",
   currencySelector: "flex w-1/4",
   transferPropInput: "w-full bg-transparent text-white text-2xl placeholder:text-[#B2B9D2] outline-none mb-6 flex w-1/4",
+  currencySelectorContent: "flex h-min items-center justify-between w-full bg-[#2D2F36] hover:bg-[#41444F] font-medium cursor-pointer p-2 mt-[-0.2rem] text-xl rounded-2xl",
 };
 
 function Main() {
