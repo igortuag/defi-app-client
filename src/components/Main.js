@@ -21,15 +21,14 @@ function Main() {
     <main className={styles.wrapper}>
       <form className={styles.content}>
         <header className={styles.formHeader}>
-          <div>
-            Swap
-          </div>
+          <div>Swap</div>
           <div>
             <RiSettings3Fill />
           </div>
         </header>
         <div className={styles.transferPropContainer}>
-          <input type="text"
+          <input
+            type="text"
             className={styles.transferPropInput}
             placeholder="0.0"
             pattern="[0-9]*[.,]?[0-9]*$"
@@ -40,14 +39,20 @@ function Main() {
               <div className={style.currencySelectorIcon}>
                 <Image src={ethLogo} alt="ETH" width={20} height={20} />
               </div>
-              <div className={style.currencySelectorTicker}>
-                ETH
-              </div>
+              <div className={style.currencySelectorTicker}>ETH</div>
               <div className={style.currencySelectorArrow}>
                 <AiOutlineDown />
               </div>
             </div>
           </div>
+        </div>
+        <div className={styles.transferPropContainer}>
+          <input
+            type="text"
+            className={styles.transferPropInput}
+            placeholder="0x..."
+            onChange={(e) => handleInputChange(e, "addressTo")}
+          />
         </div>
       </form>
     </main>
