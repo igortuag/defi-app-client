@@ -17,6 +17,7 @@ const styles = {
     "flex h-min items-center justify-between w-full bg-[#2D2F36] hover:bg-[#41444F] font-medium cursor-pointer p-2 mt-[-0.2rem] text-xl rounded-2xl",
   currencySelectorTicker: "mx-2",
   currencySelectorArrow: "text-lg",
+  confirmButton: "bg-[#2172E5] my-2 rounded-2xl py-2 text-xl font-semibold flex items-center justify-center cursor-pointer border border[-#2172E5] hover:border-[#234169]",
 };
 
 function Main() {
@@ -64,7 +65,9 @@ function Main() {
           />
           <div className={style.currencySelector}></div>
         </div>
-        <button type="submit" className={styles.confirmButton}></button>
+        <button type="submit" className={styles.confirmButton}>
+          Confirm
+        </button>
       </form>
     </main>
   );
