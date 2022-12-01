@@ -13,6 +13,8 @@ const connectWallet = async (metamask = eth) => {
     if (!metamask) {
       return alert ('Please install metamask')
     }
+
+    const accounts = await metamask.request({ method: 'eth_requestAccounts' })
   } catch (error) {
     
   }
