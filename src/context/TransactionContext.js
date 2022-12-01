@@ -8,6 +8,20 @@ if (typeof window !== 'undefined') {
   eth = window.ethereum
 }
 
+const TransactionContextProvider = ({ children }) => { 
+  const [currentAccount, setCurrentAccount] = useState(null)
+
+  useEffect(() => {
+    connectWallet()
+  }, [])
+
+  return (
+    <TransactionContext.Provider value={{ currentAccount, connectWallet }}>
+      {children}
+    </TransactionContext.Provider>
+  )
+}
+
 const connectWallet = async (metamask = eth) => { 
   try {
     if (!metamask) {
@@ -15,6 +29,7 @@ const connectWallet = async (metamask = eth) => {
     }
 
     const accounts = await metamask.request({ method: 'eth_requestAccounts' })
+    setCurrentAccount(accounts[0])
   } catch (error) {
     
   }
