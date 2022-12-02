@@ -5,6 +5,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 import ethlogo from "../assets/ethlogo.png";
 import uniswapLogo from "../assets/uniswapLogo.png";
 import Image from "next/image";
+import { TransactionContext } from "../context/TransactionContext";
 
 const style = {
   wrapper: "p-4 w-screen flex justify-between items-center",
@@ -25,6 +26,7 @@ const style = {
 };
 
 const Header = () => {
+  const { connectWallet, currentAccount } = React.useContext(TransactionContext);
   const [selectedNav, setSelectedNav] = useState("swap");
 
   return (

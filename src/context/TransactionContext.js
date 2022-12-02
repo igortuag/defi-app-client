@@ -8,7 +8,7 @@ if (typeof window !== "undefined") {
   eth = window.ethereum;
 }
 
-const TransactionContextProvider = ({ children }) => {
+export const TransactionContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState(null);
 
   const connectWallet = async (metamask = eth) => {
