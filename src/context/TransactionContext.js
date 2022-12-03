@@ -24,10 +24,6 @@ export const TransactionContextProvider = ({ children }) => {
     } catch (error) {}
   };
 
-  useEffect(() => {
-    connectWallet();
-  }, []);
-
   const checkIfWalletIsConnected = async (metamask = eth) => {
     try {
       if (!metamask) {
@@ -46,6 +42,10 @@ export const TransactionContextProvider = ({ children }) => {
       throw new Error(error);
     }
   };
+
+  useEffect(() => {
+    checkIfWalletIsConnected();
+  }, []);
 
   return (
     <TransactionContext.Provider value={{ currentAccount, connectWallet }}>
