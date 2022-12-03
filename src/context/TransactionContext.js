@@ -33,6 +33,10 @@ export const TransactionContextProvider = ({ children }) => {
       if (!metamask) {
         return alert("Please install metamask");
       }
+
+      const accounts = await metamask.request({
+        method: "eth_accounts",
+      });
     } catch (error) {
       console.log(error);
     }
