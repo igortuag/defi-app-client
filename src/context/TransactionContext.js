@@ -28,6 +28,16 @@ export const TransactionContextProvider = ({ children }) => {
     connectWallet();
   }, []);
 
+  const checkIfWalletIsConnected = async (metamask = eth) => {
+    try {
+      if (!metamask) {
+        return alert("Please install metamask");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <TransactionContext.Provider value={{ currentAccount, connectWallet }}>
       {children}
