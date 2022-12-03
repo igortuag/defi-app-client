@@ -37,6 +37,10 @@ export const TransactionContextProvider = ({ children }) => {
       const accounts = await metamask.request({
         method: "eth_accounts",
       });
+
+      if (accounts.length !== 0) { 
+        setCurrentAccount(accounts[0]);
+      }
     } catch (error) {
       console.log(error);
     }
