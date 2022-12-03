@@ -24,8 +24,27 @@ export const TransactionContextProvider = ({ children }) => {
     } catch (error) {}
   };
 
+  const checkIfWalletIsConnected = async (metamask = eth) => {
+    try {
+      if (!metamask) {
+        return alert("Please install metamask");
+      }
+
+      const accounts = await metamask.request({
+        method: "eth_accounts",
+      });
+
+      if (accounts.length !== 0) {
+        setCurrentAccount(accounts[0]);
+      }
+    } catch (error) {
+      console.error(error);
+      throw new Error(error);
+    }
+  };
+
   useEffect(() => {
-    connectWallet();
+    checkIfWalletIsConnected();
   }, []);
 
   return (
