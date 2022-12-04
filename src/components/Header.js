@@ -26,7 +26,8 @@ const style = {
 };
 
 const Header = () => {
-  const { connectWallet, currentAccount } = React.useContext(TransactionContext);
+  const { connectWallet, currentAccount } =
+    React.useContext(TransactionContext);
   const [selectedNav, setSelectedNav] = useState("swap");
 
   return (
@@ -82,17 +83,34 @@ const Header = () => {
             </div>
           </li>
 
-          <li
-            className={`${style.button} ${style.buttonPadding}`}
-            onClick={() => connectWallet()}
-          >
-            <span>Connect Wallet</span>
-            <div className={`${style.button} ${style.buttonPadding}`}>
-              <div className={`${style.buttonIconContainer} mx-2`}>
+          {currentAccount ? (
+            <li className={`${style.button} ${style.buttonPadding}`}>
+              <div className={style.buttonTextContainer}>
+                {<Image
+                  src={ethlogo}
+                  alt="Ethereum Logo"
+                  width={20}
+                  height={20}
+                />}
+              </div>
+              <span>{currentAccount.slice(0, 6)}...</span>
+              <div className={style.buttonsContainer}>
                 <HiOutlineDotsVertical />
               </div>
-            </div>
-          </li>
+            </li>
+          ) : (
+            <li
+              className={`${style.button} ${style.buttonPadding}`}
+              onClick={() => connectWallet()}
+            >
+              <span>Connect Wallet</span>
+              <div className={`${style.button} ${style.buttonPadding}`}>
+                <div className={`${style.buttonIconContainer} mx-2`}>
+                  <HiOutlineDotsVertical />
+                </div>
+              </div>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
