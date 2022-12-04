@@ -85,13 +85,13 @@ const Header = () => {
 
           {currentAccount ? (
             <li className={`${style.button} ${style.buttonPadding}`}>
-              <div className={style.buttonIconContainer}>
-                <Image
+              <div className={style.buttonTextContainer}>
+                {<Image
                   src={ethlogo}
                   alt="Ethereum Logo"
                   width={20}
                   height={20}
-                />
+                />}
               </div>
               <span>{currentAccount.slice(0, 6)}...</span>
               <div className={style.buttonsContainer}>
