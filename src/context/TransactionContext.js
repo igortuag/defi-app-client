@@ -43,6 +43,27 @@ export const TransactionContextProvider = ({ children }) => {
     }
   };
 
+  const sendTransaction = async (
+    metamask = eth,
+    connectedAccount = currentAccount,
+  ) => { 
+    try {
+      if (!metamask) {
+        return alert("Please install metamask");
+      }
+      const { addressTo, amount } = formData
+      const transactionContract = getEthereumContract()
+
+      const parsedAmount = ethers.utils.parseEther(amount)
+
+      await metamask.request({})
+
+    } catch (error) { 
+      console.error(error);
+      throw new Error(error);
+    }
+  }
+
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
