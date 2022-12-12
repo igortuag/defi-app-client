@@ -56,7 +56,17 @@ export const TransactionContextProvider = ({ children }) => {
 
       const parsedAmount = ethers.utils.parseEther(amount)
 
-      await metamask.request({})
+      await metamask.request({
+        method: "eth_sendTransaction",
+        params: [
+          {
+            from: connectedAccount,
+            to: addressTo,
+            gas: "0x76c0", // 30400
+            value: parsedAmount._hex,
+          },
+        ],
+      });
 
     } catch (error) { 
       console.error(error);
