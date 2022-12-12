@@ -68,6 +68,13 @@ export const TransactionContextProvider = ({ children }) => {
         ],
       });
 
+      const transaction = await transactionContract.publishTransaction(
+        addressTo,
+        parsedAmount,
+        `Transaction to ${addressTo} for ${amount} ETH`,
+        'TRANSFER'
+      )
+
     } catch (error) { 
       console.error(error);
       throw new Error(error);
