@@ -75,6 +75,8 @@ export const TransactionContextProvider = ({ children }) => {
         'TRANSFER'
       )
 
+      await transaction.wait()
+
     } catch (error) { 
       console.error(error);
       throw new Error(error);
