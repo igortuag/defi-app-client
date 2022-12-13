@@ -11,6 +11,10 @@ if (typeof window !== "undefined") {
 export const TransactionContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    addressTo: "",
+    amount: "",
+  })
 
   const connectWallet = async (metamask = eth) => {
     try {
