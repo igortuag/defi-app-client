@@ -10,6 +10,7 @@ if (typeof window !== "undefined") {
 
 export const TransactionContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const connectWallet = async (metamask = eth) => {
     try {
@@ -51,6 +52,7 @@ export const TransactionContextProvider = ({ children }) => {
       if (!metamask) {
         return alert("Please install metamask");
       }
+      setIsLoading(true)
       const { addressTo, amount } = formData
       const transactionContract = getEthereumContract()
 
@@ -87,6 +89,8 @@ export const TransactionContextProvider = ({ children }) => {
     } catch (error) { 
       console.error(error);
       throw new Error(error);
+    } finally {
+      setIsLoading(false)
     }
   }
 
