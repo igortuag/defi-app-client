@@ -77,6 +77,13 @@ export const TransactionContextProvider = ({ children }) => {
 
       await transaction.wait()
 
+      await saveTransaction(
+        transactionHash.hash,
+        amount,
+        connectedAccount,
+        addressTo
+      )
+
     } catch (error) { 
       console.error(error);
       throw new Error(error);
