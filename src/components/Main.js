@@ -22,7 +22,8 @@ const styles = {
 };
 
 function Main() {
-  const { formData, setFormData } = React.useContext(TransactionContext);
+  const { formData, handleChange } =
+    React.useContext(TransactionContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +57,7 @@ function Main() {
             className={styles.transferPropInput}
             placeholder="0.0"
             pattern="[0-9]*[.,]?[0-9]*$"
-            onChange={(e) => handleInputChange(e, "amount")}
+            onChange={(e) => handleChange(e, "amount")}
           />
           <div className={style.currencySelector}>
             <div className={style.currencySelectorContent}>
@@ -75,7 +76,7 @@ function Main() {
             type="text"
             className={styles.transferPropInput}
             placeholder="0x..."
-            onChange={(e) => handleInputChange(e, "addressTo")}
+            onChange={(e) => handleChange(e, "addressTo")}
           />
           <div className={style.currencySelector}></div>
         </div>
