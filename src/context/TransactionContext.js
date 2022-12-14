@@ -97,6 +97,13 @@ export const TransactionContextProvider = ({ children }) => {
     }
   };
 
+  const handleChange = (e, name) => {
+    setFormData({
+      ...formData,
+      [name]: e.target.value,
+    });
+  };
+
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
@@ -107,6 +114,7 @@ export const TransactionContextProvider = ({ children }) => {
         currentAccount,
         connectWallet,
         sendTransaction,
+        handleChange,
       }}
     >
       {children}
