@@ -14,7 +14,7 @@ export const TransactionContextProvider = ({ children }) => {
   const [formData, setFormData] = useState({
     addressTo: "",
     amount: "",
-  })
+  });
 
   const connectWallet = async (metamask = eth) => {
     try {
@@ -50,17 +50,17 @@ export const TransactionContextProvider = ({ children }) => {
 
   const sendTransaction = async (
     metamask = eth,
-    connectedAccount = currentAccount,
-  ) => { 
+    connectedAccount = currentAccount
+  ) => {
     try {
       if (!metamask) {
         return alert("Please install metamask");
       }
-      setIsLoading(true)
-      const { addressTo, amount } = formData
-      const transactionContract = getEthereumContract()
+      setIsLoading(true);
+      const { addressTo, amount } = formData;
+      const transactionContract = getEthereumContract();
 
-      const parsedAmount = ethers.utils.parseEther(amount)
+      const parsedAmount = ethers.utils.parseEther(amount);
 
       await metamask.request({
         method: "eth_sendTransaction",
@@ -78,32 +78,37 @@ export const TransactionContextProvider = ({ children }) => {
         addressTo,
         parsedAmount,
         `Transaction to ${addressTo} for ${amount} ETH`,
-        'TRANSFER'
-      )
+        "TRANSFER"
+      );
 
-      await transaction.wait()
+      await transaction.wait();
 
       await saveTransaction(
         transactionHash.hash,
         amount,
         connectedAccount,
         addressTo
-      )
-
-    } catch (error) { 
+      );
+    } catch (error) {
       console.error(error);
       throw new Error(error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
 
   return (
-    <TransactionContext.Provider value={{ currentAccount, connectWallet }}>
+    <TransactionContext.Provider
+      value={{
+        currentAccount,
+        connectWallet,
+        sendTransaction,
+      }}
+    >
       {children}
     </TransactionContext.Provider>
   );
