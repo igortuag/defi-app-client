@@ -24,6 +24,15 @@ const styles = {
 function Main() {
   const { formData, setFormData } = React.useContext(TransactionContext);
 
+  const handleSubmit = (e) => { 
+    e.preventDefault()
+    const { addressTo, amount } = formData;
+
+    if (!addressTo || !amount) { 
+      return alert("Please fill all fields");
+    }
+  }
+
   return (
     <main className={styles.wrapper}>
       <form
