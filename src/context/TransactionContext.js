@@ -104,6 +104,17 @@ export const TransactionContextProvider = ({ children }) => {
     });
   };
 
+  const getEthereumContract = () => { 
+    const provider = new ethers.providers.Web3Provider(eth);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(
+      contractAddress,
+      contractABI,
+      signer
+    );
+    return contract;
+  }
+
   useEffect(() => {
     checkIfWalletIsConnected();
   }, []);
