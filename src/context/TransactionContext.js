@@ -115,6 +115,7 @@ export const TransactionContextProvider = ({ children }) => {
         connectWallet,
         sendTransaction,
         handleChange,
+        formData
       }}
     >
       {children}
